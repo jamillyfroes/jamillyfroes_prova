@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }else{
         $sql="SELECT * FROM usuario WHERE nome LIKE :busca_nome ORDER BY nome ASC";
         $stmt=$pdo->prepare($sql);
-        $stmt->bindValue(':busca_nome',"%$busca%",PDO::PARAM_STR);
+        $stmt->bindValue(':busca_nome',"$busca%",PDO::PARAM_STR);
     }
 }else{
         $sql="SELECT * FROM usuario ORDER BY nome ASC";
@@ -45,9 +45,10 @@ $usuarios= $stmt->fetchALL(PDO::FETCH_ASSOC);
     <form action="buscar_usuario.php" method="POST">
         <label for="busca">Digite o ID ou NOME(opcional):</label>
         <input type="text" id="busca" name="busca">
+        <button type="submit">Pesquisar</button>
     </form>
         <?php if(!empty($usuarios)):  ?>
-            <table>
+            <table border="1">
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
@@ -61,7 +62,19 @@ $usuarios= $stmt->fetchALL(PDO::FETCH_ASSOC);
                     <td><?=htmlspecialchars($usuario['nome'])?></td>
                     <td><?=htmlspecialchars($usuario['email'])?></td>
                     <td><?=htmlspecialchars($usuario['id_perfil'])?></td>
+                    <td>
+                        <a href="alterar_usuario.php?id=<?=htmlspecialchars($usuario['id_usuario'])?>">Alterar</a>
+
+                        <a href="excluir_usuario.php?id=<?=htmlspecialchars($usuario['id_usuario'])?>"onclick="return confirm('Tem certeza que deseja excluir este usuario?')">Excluir</a>
+                    </td>
+                    <?php endforeach;?>
                 </tr>
             </table>
+            <?php else:?>
+                <p>Nenhum usuario encontrado</p>
+            <?php endif;?>
+
+            <a href="principal.php">Voltar</a>
+
 </body>
 </html>
