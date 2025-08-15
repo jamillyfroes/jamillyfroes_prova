@@ -22,7 +22,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         }else{
             $sql= "SELECT * FROM usuario WHERE nome LIKE :busca_nome";
             $stmt= $pdo->prepare($sql);
-            $stmt->bindParam(':busca_nome',"%$busca%",PDO::PARAM_STR);
+            $stmt->bindValue(':busca_nome',"$busca%",PDO::PARAM_STR);
         }
 
         $stmt->execute();
@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         <input type="text" id="busca_usuario" name="busca_usuario" required onkeyup="buscarSugestoes()">
         <!--div para exibir sugestoes de usuarios-->
         <div id="sugestoes"></div>
-        <button type="submit">Buscar></button>
+        <button type="submit">Buscar</button>
     </form>
 
     <?php if($usuario): ?>
@@ -73,7 +73,23 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             <option value="1" <?=$usuario['id_perfil']== 1 ?'select':''?>>Administrador</option>
             <option value="2" <?=$usuario['id_perfil']== 2 ?'select':''?>>Secretaria</option>
             <option value="3" <?=$usuario['id_perfil']== 3 ?'select':''?>>Almoxarife</option>
+            <option value="4" <?=$usuario['id_perfil']== 3 ?'select':''?>>Cliente</option>
         </select>
+
+    <!--Se o usuario logado for o adm, exibe opcao de alterar senha-->
+    <?php if($_SESSION['perfil']==1): ?>
+        <label for="nova_senha">Nova Senha</label>
+        <input type="password" id="nova_senha" name="nova_senha">
+    <?php endif; ?>
+
+        <button type="submit">Alterar</button>
+        <button type="reset">Cancelar</button>
     </form>
+    <?php endif; ?> 
+    <a href="principal.php">Voltar</a>
+    <br><br>
+    <address>
+        <center>Jamilly Fróes- Estudante- Técnico de Desenvolvimento de Sistemas</center>
+    </address>
 </body>
 </html>

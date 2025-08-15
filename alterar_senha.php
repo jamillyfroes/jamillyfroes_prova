@@ -73,5 +73,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         senha2.type= tipo;
     }
 </script>
+<br><br>
+    <address>
+        <center>Jamilly Fróes- Estudante- Técnico de Desenvolvimento de Sistemas</center>
+    </address>
 </body>
 </html>

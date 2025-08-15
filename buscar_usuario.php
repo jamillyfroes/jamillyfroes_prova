@@ -38,6 +38,7 @@ $usuarios= $stmt->fetchALL(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar Usuario</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="meucss/estilo.css">
 </head>
 <body>
     <h2>Lista de Usuarios</h2>
@@ -48,7 +49,7 @@ $usuarios= $stmt->fetchALL(PDO::FETCH_ASSOC);
         <button type="submit">Pesquisar</button>
     </form>
         <?php if(!empty($usuarios)):  ?>
-            <table border="1">
+            <table>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
@@ -73,8 +74,11 @@ $usuarios= $stmt->fetchALL(PDO::FETCH_ASSOC);
             <?php else:?>
                 <p>Nenhum usuario encontrado</p>
             <?php endif;?>
-
+            <br><br>
             <a href="principal.php">Voltar</a>
-
+            <br><br>
+    <address>
+        <center>Jamilly Fróes- Estudante- Técnico de Desenvolvimento de Sistemas</center>
+    </address>
 </body>
 </html>
