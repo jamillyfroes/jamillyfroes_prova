@@ -92,18 +92,18 @@ $permissoes=[
     </ul>
 </nav>
     <h2>Cadastrar Usuario</h2>
-    <form action="cadastro_usuario.php" method="POST" onsubmit="return validarUsuario()">
+    <form action="cadastro_usuario.php" method="POST">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email">
 
         <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
+        <input type="password" id="senha" name="senha">
 
         <label for="id_perfil">Perfil</label>
-        <select id="id_perfil" name="id_perfil" required>
+        <select id="id_perfil" name="id_perfil">
             <option value="1">Administrador</option>
             <option value="2">Secretaria</option>
             <option value="3">Almoxarife</option>
@@ -119,6 +119,6 @@ $permissoes=[
     <address>
         <center>Jamilly Fróes- Estudante- Técnico de Desenvolvimento de Sistemas</center>
     </address>
-    <script src="meujs/valida.js"></script>
+    <script src="meujs/cadUsuario.js"></script>
 </body>
 </html>

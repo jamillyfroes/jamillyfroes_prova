@@ -114,10 +114,10 @@ $permissoes=[
         <input type="hidden" name="id_usuario" value="<?=htmlspecialchars($usuario['id_usuario'])?>">
 
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>"required>
+        <input type="text" id="nome" name="nome" value="<?=htmlspecialchars($usuario['nome'])?>">
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?=htmlspecialchars($usuario['email'])?>"required>
+        <input type="email" id="email" name="email" value="<?=htmlspecialchars($usuario['email'])?>">
 
         <label for="id_perfil">Perfil:</label>
         <select id="id_perfil" name="id_perfil">
@@ -142,5 +142,6 @@ $permissoes=[
     <address>
         <center>Jamilly Fróes- Estudante- Técnico de Desenvolvimento de Sistemas</center>
     </address>
+    <script src="meujs/alterarUsuario.js"></script>
 </body>
 </html>
