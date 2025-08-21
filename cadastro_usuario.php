@@ -28,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     }
 }
 
-//obtendo o noe do perfil do usuario logado
+//obtendo o nome do perfil do usuario logado
 $id_perfil= $_SESSION['perfil'];
 $sqlPerfil= "SELECT nome_perfil FROM perfil WHERE id_perfil = :id_perfil";
 $stmtPerfil= $pdo->prepare($sqlPerfil);
@@ -71,8 +71,6 @@ $permissoes=[
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Usuario</title>
     <link rel="stylesheet" href="styles.css">
-    
-    
 </head>
 <body>
 <nav>
