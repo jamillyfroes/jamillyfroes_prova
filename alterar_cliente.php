@@ -80,6 +80,13 @@ $permissoes=[
     <link rel="stylesheet" href="styles.css">
     <!--Verifique se o javascript esta funcionando corretamente-->
     <script src="scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $('#telefone').mask('(00) 00000-0000');
+        });
+    </script>
 </head>
 <body>
 <nav>
