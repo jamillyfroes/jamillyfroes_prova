@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
          //valida telefone
          if (telefone === "") {
             alert("O campo Telefone deve ser preenchido!");
-            document.getElementById("endereco").focus();
+            document.getElementById("telefone").focus();
             event.preventDefault();
             return;
         }
